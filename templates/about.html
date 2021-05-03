@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>my ece class</title>
+  </head>
+  <!-- <style>
+    .list-group-item.active{
+      background:black ;
+    }
+  </style> -->
+  <body>
+  {% include 'navbar.html' %}
+    <h1>Hello ece wako kyse ho </h1>
+  <div class="row">
+    
+    <div class="col-md-2-mt-3">
+       <!-- catogaries -->
+      
+       <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          All images
+        </a>
+        {% for c in cats %}
+        <a href="/category{{c.pk}}" class="list-group-item list-group-item-action">{{c.title}}</a>
+        {% endfor %}
+      </div>
+       
+        
+      
+      
+
+    </div>
+    <div class="col-md-10">
+      <!-- images ke liye hain -->
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-columns">
+            {% for i in images %}
+            <div class="card" style="width: 23rem;">
+              <img src="\media\{{i.image}}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{i.title}}</h5>
+                <p class="card-text">{{i.description}}</p>
+                <a href="#" class="btn btn-primary">View</a>
+              </div>
+            </div>
+            
+              
+            {% endfor %}
+           
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+    <!-- {% for i in images %}
+    <h1>{{i.title}}</h1>
+    {% endfor %} -->
+    <!-- main code -->
+    {% for i in cats%}
+       <h1>{{i.title}}</h1>
+       <h1>{{i.description}}</h1>
+       {% endfor %}
+
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
