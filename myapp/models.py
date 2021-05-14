@@ -8,7 +8,7 @@ from django.apps import AppConfig
 class Category(models.Model):
     default_auto_field = 'django.db.models.AutoField' 
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    # description = models.TextField()
 
     def __str__(self):
         return self.title
