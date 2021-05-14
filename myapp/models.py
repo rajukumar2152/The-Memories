@@ -1,10 +1,12 @@
 from django.db import models
+from django.apps import AppConfig
 
 
 # Create your models here.
 
 # create categories model
 class Category(models.Model):
+    default_auto_field = 'django.db.models.AutoField' 
     title = models.CharField(max_length=100)
     description = models.TextField()
 
